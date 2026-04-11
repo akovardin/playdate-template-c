@@ -1,0 +1,5 @@
+name=ctemplate
+author=Artem Kovardin
+description=A small demo of the C API
+bundleID=ru.kodikapusta.ctemplate
+imagePath=
