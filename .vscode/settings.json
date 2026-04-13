@@ -1,0 +1,21 @@
+{
+  // "playdate.source": "source",
+  // "playdate.output": "output.pdx",
+  // // Optionally set sdkPath if not PLAYDATE_SDK_PATH is configured.
+  // "playdate.sdkPath": "${userHome}/Developer/PlaydateSDK",
+  "Lua.runtime.nonstandardSymbol": [
+    "+=",
+    "-=",
+    "*=",
+    "/="
+  ],
+  "C_Cpp.default.includePath": ["${userHome}/Developer/PlaydateSDK/C_API"],
+  "C_Cpp.default.defines": ["TARGET_EXTENSION", "PLAYDATE_SIMULATOR"],
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "C_Cpp.formatting": "vcFormat",
+  "files.associations": {
+    "*.h": "c"
+  }
+}
