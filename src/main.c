@@ -1,11 +1,3 @@
-//
-//  main.c
-//  Extension
-//
-//  Created by Dave Hayden on 7/30/14.
-//  Copyright (c) 2014 Panic, Inc. All rights reserved.
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,12 +10,10 @@ LCDFont* font = NULL;
 #ifdef _WINDLL
 __declspec(dllexport)
 #endif
-int eventHandler(PlaydateAPI* pd, PDSystemEvent event, uint32_t arg)
-{
+int eventHandler(PlaydateAPI* pd, PDSystemEvent event, uint32_t arg) {
 	(void)arg; // arg is currently only used for event = kEventKeyPressed
 
-	if ( event == kEventInit )
-	{
+	if ( event == kEventInit ) {
 		const char* err;
 		font = pd->graphics->loadFont(fontpath, &err);
 		
@@ -46,9 +36,10 @@ int y = (240-TEXT_HEIGHT)/2;
 int dx = 1;
 int dy = 2;
 
-static int update(void* userdata)
-{
+static int update(void* userdata) {
 	PlaydateAPI* pd = userdata;
+
+	pd->system->logToConsole("update");
 	
 	pd->graphics->clear(kColorWhite);
 	pd->graphics->setFont(font);
